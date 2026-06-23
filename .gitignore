@@ -1,0 +1,12 @@
+# Reference archives (don't deploy, don't commit)
+_reference_ezjoygames/
+_logo_candidates/
+
+# Internal handoff docs (not for public repo)
+HANDOFF.md
+PROJECT_NOTES.md
+
+# Environment
+.env
+.DS_Store
+*.log
