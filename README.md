@@ -2,7 +2,7 @@
 
 Official website for **株式会社ドリームプレイ** (DreamPlay Inc.), a Japanese AI interactive film & game studio.
 
-🌐 **Live**: <https://dreamplaylab.net>
+🌐 **Live**: <https://dreamplaylab.com>
 
 ## Overview
 
@@ -26,7 +26,7 @@ Bilingual (Japanese / English) single-page corporate site.
 
 ## Deployment
 
-Hosted on **GitHub Pages**. Custom apex domain (`dreamplaylab.net`) configured via `CNAME` file + DNS `A` records pointing to GitHub Pages IPs at the registrar.
+Hosted on **GitHub Pages**. Custom apex domain (`dreamplaylab.com`) configured via `CNAME` file + DNS `A` records pointing to GitHub Pages IPs at the registrar.
 
 ## Tech Stack
 
