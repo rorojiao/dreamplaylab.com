@@ -10,3 +10,7 @@ PROJECT_NOTES.md
 .env
 .DS_Store
 *.log
+
+# 中文原图备份 / 中间文件（不部署）
+assets/_zh_backup/
+assets/*.orig
