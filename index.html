@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns#" data-title-ja="株式会社ドリームプレイ — DreamPlay Inc. | GAME × AI CREATIVE" data-title-en="DreamPlay Inc. | GAME × AI CREATIVE">
+<html lang="ja" prefix="og: http://ogp.me/ns#"
+  data-title-ja="株式会社ドリームプレイ｜ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作"
+  data-title-en="DreamPlay Inc. | Game Development · AI Interactive Content · Creative Production"
+  data-desc-ja="株式会社ドリームプレイ（DreamPlay Inc.）は、ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作に取り組む制作会社です。企画の初期段階から制作・改善まで、目的に合わせた進め方でご一緒します。"
+  data-desc-en="DreamPlay Inc. is a studio for game development, AI interactive content, and creative production. From early planning through production and iteration, we shape the way we work around your goal.">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0c1322">
-<title>株式会社ドリームプレイ — DreamPlay Inc. | GAME × AI CREATIVE</title>
-<meta name="description" content="株式会社ドリームプレイ（DreamPlay Inc.）は、大阪を拠点にゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作に取り組む会社です。 / DreamPlay Inc. — game development, AI interactive content, and creative production, based in Osaka, Japan.">
-<meta property="og:title" content="株式会社ドリームプレイ — DreamPlay Inc. | GAME × AI CREATIVE">
-<meta property="og:description" content="ゲームとAIで、新しい体験をつくる。大阪を拠点に、3つの事業領域とAI創作ワークスペース Nuri に取り組んでいます。 / Creating new experiences through games and AI — three business areas plus the Nuri creative workspace, based in Osaka.">
+<title>株式会社ドリームプレイ｜ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作</title>
+<meta name="description" content="株式会社ドリームプレイ（DreamPlay Inc.）は、ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作に取り組む制作会社です。企画の初期段階から制作・改善まで、目的に合わせた進め方でご一緒します。">
+<meta property="og:title" content="株式会社ドリームプレイ（DreamPlay Inc.）">
+<meta property="og:description" content="ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作。新しい体験を、ともにつくります。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://dreamplaylab.com/">
 <meta property="og:image" content="https://dreamplaylab.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DreamPlay Inc. — GAME × AI CREATIVE（ゲーム × AI クリエイティブ）">
+<meta property="og:image:alt" content="株式会社ドリームプレイ — ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作">
 <link rel="canonical" href="https://dreamplaylab.com/">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -63,7 +66,7 @@
     text-rendering:optimizeLegibility;
     overflow-x:hidden;
   }
-  /* —— 双语显隐 —— */
+  /* —— Bilingual show/hide —— */
   body.lang-en [data-ja]{display:none}
   body.lang-ja [data-en]{display:none}
   a{color:inherit;text-decoration:none;transition:color .18s ease}
@@ -91,7 +94,7 @@
   .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin-bottom:14px}
   .section-head{margin-bottom:40px}
 
-  /* —— 导航 —— */
+  /* —— Nav —— */
   .nav{
     position:sticky;top:0;z-index:50;
     background:oklch(14.6% 0.020 268.3 / 0.82);
@@ -170,7 +173,7 @@
   .foot-site a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
   .foot-site a:hover{color:var(--fg)}
 
-  /* —— 共享响应式（来自原站 980/720/560 断点中与组件相关的规则） —— */
+  /* —— Shared responsive rules (component-level 980/720/560 breakpoints) —— */
   @media (max-width:980px){
     .contact-grid{grid-template-columns:1fr}
   }
@@ -203,8 +206,8 @@
   }
 
   /* ============ Corporate site-specific styles ============ */
-  /* —— Hero：左叙事 + 右会议事实 —— */
-  .hero{position:relative;overflow:hidden;padding:84px 0 72px}
+  /* —— Hero：業務定位 + 2 CTA のみ —— */
+  .hero{position:relative;overflow:hidden;padding:110px 0 88px}
   .hero-bg{
     position:absolute;inset:0;z-index:0;
     background:
@@ -212,45 +215,31 @@
       radial-gradient(80% 60% at 8% 88%, oklch(77.0% 0.113 84.1 / 0.10), transparent 60%);
   }
   .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--border) 30%,var(--border) 70%,transparent);opacity:.6}
-  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .8fr;gap:40px;align-items:start}
+  .hero .wrap{position:relative;z-index:1}
   .hero h1{
     font-family:var(--font-display);
     font-size:clamp(30px,4.8vw,54px);
     font-weight:800;line-height:1.18;letter-spacing:-.015em;
-    max-width:16ch;margin-bottom:20px;
+    max-width:18ch;margin-bottom:22px;
   }
   .hero h1 .glow{background:linear-gradient(120deg, var(--cyan), var(--mint) 45%, var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .hero-lede{font-size:clamp(15px,1.6vw,17.5px);color:var(--muted);max-width:52ch;margin-bottom:26px}
+  .hero .hero-lede{font-size:clamp(15px,1.6vw,17.5px);color:var(--muted);max-width:56ch;margin-bottom:30px}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-  /* 会议事实面板 */
-  .fact-panel{background:oklch(21.0% 0.017 248.7 / 0.72);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;backdrop-filter:blur(6px)}
-  .fact-panel .fp-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-  .fact-panel .fp-head b{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700}
-  .fact-panel .fp-head span{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
-  .fp-row{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:baseline;padding:8px 0}
-  .fp-row + .fp-row{border-top:1px solid oklch(34.6% 0.043 273.2 / 0.3)}
-  .fp-row b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);font-weight:600}
-  .fp-row span{font-size:14px;color:var(--fg);line-height:1.5;overflow-wrap:anywhere}
-  .fp-row span.small{font-size:12.5px;color:var(--muted)}
-  .fp-link{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
-  .fp-link a{color:var(--cyan);font-family:var(--font-mono);font-size:12.5px;text-decoration:underline;text-underline-offset:3px}
-  .fp-link a:hover{color:var(--fg)}
-  .fp-link a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
 
-  /* —— About：左摘要 + 右登记信息 —— */
-  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:start}
-  .about-summary{font-size:16.5px;color:var(--muted);max-width:44ch;line-height:1.75}
-  .stamp{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:9px 14px;border:1px solid oklch(81.9% 0.128 222.0 / 0.4);border-radius:10px;color:var(--cyan);font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em}
-  .stamp i{display:block;width:8px;height:8px;border-radius:50%;background:var(--gold)}
-  .data-list{border-top:1px solid var(--border)}
-  .data{display:grid;grid-template-columns:168px 1fr;padding:15px 0;border-bottom:1px solid var(--border);align-items:baseline}
-  .data dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:600;text-transform:uppercase}
-  .data dd{margin:0;font-size:15.5px;font-weight:500;line-height:1.6}
-  .data dd small{display:block;margin-top:3px;color:var(--muted);font-size:12.5px;font-weight:400}
-  .data dd a{color:var(--cyan)}
-  .data dd a:hover{color:var(--fg)}
+  /* —— What we help with：編集式リスト —— */
+  .help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .help-item{border-left:2px solid var(--cyan);padding:6px 0 6px 20px}
+  .help-item:nth-child(2){border-left-color:var(--gold)}
+  .help-item:nth-child(3){border-left-color:var(--mint)}
+  .help-item .no{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:700}
+  .help-item h3{font-family:var(--font-display);font-size:18.5px;font-weight:700;margin-top:10px;line-height:1.45}
+  .help-item p{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.75}
+  .help-note{margin-top:26px;font-size:13px;color:var(--muted)}
+  .help-note a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+  .help-note a:hover{color:var(--fg)}
+  .help-note a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
 
-  /* —— Business Focus：三领域卡 —— */
+  /* —— Business Focus：三領域カード —— */
   .focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .focus-card{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:16px;padding:26px 24px 22px;display:flex;flex-direction:column;min-height:230px;transition:transform .25s, border-color .25s, box-shadow .25s}
   .focus-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px oklch(77.0% 0.113 84.1 / 0.10)}
@@ -263,7 +252,7 @@
   .focus-card.c2 .tag{color:var(--cyan)}
   .focus-card.c3 .tag{color:var(--mint)}
 
-  /* —— Nuri：左说明 + 右验证状态 —— */
+  /* —— Nuri：左説明 + 右公開ステータス —— */
   .nuri-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
   .nuri-copy h2{margin-top:4px}
   .nuri-copy h2 small{display:block;margin-top:6px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:600}
@@ -289,7 +278,7 @@
   .nuri-actions .btn{padding:11px 18px;font-size:14px}
   .btn-external::after{content:"↗";font-family:var(--font-mono);font-size:13px}
 
-  /* —— Flow：横向四步 + 初回对话节奏 —— */
+  /* —— Flow：横4ステップ + 初回のお打ち合わせ —— */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;margin-bottom:46px}
   .steps::before{content:"";position:absolute;top:30px;left:36px;right:36px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--gold) 50%,var(--mint))}
   .fstep{position:relative;padding-top:76px}
@@ -311,39 +300,40 @@
   .rhythm-item strong{display:block;margin-top:8px;font-size:14.5px;font-family:var(--font-display);font-weight:700}
   .rhythm-item p{margin-top:7px;font-size:12.5px;color:var(--muted);line-height:1.68}
 
-  /* —— Contact 补充 —— */
+  /* —— Contact 補足 —— */
   .boundary-note{margin-top:22px;padding:13px 16px;border-left:3px solid var(--gold);background:oklch(77.0% 0.113 84.1 / 0.08);color:var(--muted);font-size:12.5px;line-height:1.7;border-radius:0 10px 10px 0}
 
-  /* —— Footer 补充 —— */
+  /* —— Footer 補足 —— */
   .foot-meta{font-size:12.5px;color:var(--muted);width:100%;line-height:1.7}
   .foot-meta a{color:var(--cyan)}
   .foot-meta a:hover{color:var(--fg)}
 
-  /* —— 响应式（corporate 专属规则；组件级断点在 components.css） —— */
+  /* —— Responsive (corporate-specific rules; component-level breakpoints live in components.css) —— */
   @media (max-width:980px){
-    .hero .wrap{grid-template-columns:1fr;gap:28px}
+    .hero{padding:88px 0 68px}
     .focus-grid{grid-template-columns:1fr}
     .focus-card{min-height:0}
-    .about-grid{grid-template-columns:1fr;gap:28px}
+    .help-grid{grid-template-columns:1fr;gap:18px}
     .nuri-grid{grid-template-columns:1fr;gap:28px}
     .steps{grid-template-columns:repeat(2,1fr);gap:22px 16px}
     .steps::before{content:none}
     .rhythm-grid{grid-template-columns:repeat(2,1fr)}
   }
+  @media (max-width:768px){
+    .hero{padding:76px 0 60px}
+    .rhythm-grid{grid-template-columns:1fr}
+  }
   @media (max-width:560px){
     .hero{padding:64px 0 56px}
     .hero h1{font-size:30px}
     .steps{grid-template-columns:1fr}
-    .rhythm-grid{grid-template-columns:1fr}
-    .data{grid-template-columns:1fr;gap:4px;padding:12px 0}
-    .fact-panel{padding:20px 18px 16px}
-    .fp-row{grid-template-columns:96px 1fr}
+    .help-item{padding-left:16px}
   }
 </style>
 </head>
 <body class="lang-ja">
 
-<!-- 导航 -->
+<!-- ナビゲーション -->
 <nav class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="DreamPlay Inc.">
@@ -351,7 +341,6 @@
       <span>株式会社ドリームプレイ<small>DreamPlay Inc.</small></span>
     </a>
     <div class="nav-links">
-      <a href="#about"><span data-ja>会社概要</span><span data-en>Company</span></a>
       <a href="#business"><span data-ja>事業領域</span><span data-en>Business</span></a>
       <a href="#nuri"><span data-ja>Nuri</span><span data-en>Nuri</span></a>
       <a href="#flow"><span data-ja>協働の流れ</span><span data-en>Process</span></a>
@@ -364,66 +353,63 @@
   </div>
 </nav>
 
-<!-- Hero / Opening -->
+<!-- Hero / 業務定位 + CTA -->
 <header class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
-    <div>
-      <div class="eyebrow">GAME × AI CREATIVE</div>
-      <h1>
-        <span data-ja>ゲームとAIで、<br><span class="glow">新しい体験</span>をつくる。</span>
-        <span data-en>Creating <span class="glow">new experiences</span><br>through games and AI.</span>
-      </h1>
-      <p class="hero-lede">
-        <span data-ja>株式会社ドリームプレイは、大阪を拠点に、ゲーム開発、AIインタラクティブコンテンツ、クリエイティブ制作に取り組んでいます。確認できた事実を土台に、対話から次の一歩を具体化します。</span>
-        <span data-en>DreamPlay Inc. is based in Osaka and works in game development, AI interactive content, and creative production. We build the next step from verified facts, starting with a conversation.</span>
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact"><span data-ja>対話をはじめる</span><span data-en>Start a Conversation</span></a>
-        <a class="btn btn-ghost" href="#business"><span data-ja>3つの事業領域</span><span data-en>Three Business Areas</span></a>
-      </div>
+    <div class="eyebrow">GAME × AI CREATIVE</div>
+    <h1>
+      <span data-ja>ゲームとAIで、<br><span class="glow">新しい体験</span>を、ともにつくる。</span>
+      <span data-en>Creating <span class="glow">new experiences</span><br>through games and AI.</span>
+    </h1>
+    <p class="hero-lede">
+      <span data-ja>株式会社ドリームプレイは、ゲーム開発・AIインタラクティブコンテンツ・クリエイティブ制作に取り組む制作会社です。企画の初期段階から制作・改善まで、目的に合わせた進め方でご一緒します。</span>
+      <span data-en>DreamPlay Inc. is a studio for game development, AI interactive content, and creative production. From early planning through production and iteration, we shape the way we work around your goal.</span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact"><span data-ja>ご相談をはじめる</span><span data-en>Start a Conversation</span></a>
+      <a class="btn btn-ghost" href="#business"><span data-ja>事業領域を見る</span><span data-en>Explore Our Work</span></a>
     </div>
-    <aside class="fact-panel" aria-label="Company facts">
-      <div class="fp-head"><b>COMPANY FACTS</b><span>2026</span></div>
-      <div class="fp-row"><b>COMPANY</b><span><span data-ja>株式会社ドリームプレイ</span><span data-en>DreamPlay Inc.</span></span></div>
-      <div class="fp-row"><b>ESTABLISHED</b><span><span data-ja>2025年8月1日</span><span data-en>August 1, 2025</span></span></div>
-      <div class="fp-row"><b>CAPITAL</b><span><span data-ja>500万円</span><span data-en>JPY 5,000,000</span></span></div>
-      <div class="fp-row"><b>BASE</b><span><span data-ja>大阪市天王寺区</span><span data-en>Tennoji-ku, Osaka</span></span></div>
-      <div class="fp-row"><b>CONTACT</b><span>contact@dreamplaylab.com</span></div>
-      <p class="fp-link">
-        <span data-ja>製品・実績サイト：</span><span data-en>Products &amp; track record:</span>
-        <a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a>
-      </p>
-    </aside>
   </div>
 </header>
 
-<!-- About / Company -->
-<section id="about" aria-labelledby="about-title">
+<!-- What we help with / 協働できること -->
+<section id="help" aria-labelledby="help-title">
   <div class="wrap">
-    <div class="about-grid">
-      <div class="section-head">
-        <span class="eyebrow gold"><span data-ja>会社概要</span><span data-en>ABOUT US</span></span>
-        <h2 class="title" id="about-title"><span data-ja>大阪に登録する、<br>ゲームとAIの制作会社です。</span><span data-en>A game and AI studio<br>registered in Osaka.</span></h2>
-        <p class="about-summary">
-          <span data-ja>ゲーム開発、AIインタラクティブコンテンツ、クリエイティブ制作に取り組みます。公開する情報は登記情報と確認済みの事実にもとづいています。</span>
-          <span data-en>We work on game development, AI interactive content, and creative production. Everything published here follows our registered company information and verified facts.</span>
-        </p>
-        <div class="stamp"><i></i><span data-ja>大阪府に登記</span><span data-en>REGISTERED IN OSAKA</span></div>
-      </div>
-      <dl class="data-list">
-        <div class="data"><dt><span data-ja>商号</span><span data-en>Company name</span></dt><dd>株式会社ドリームプレイ<small>DreamPlay Inc.</small></dd></div>
-        <div class="data"><dt><span data-ja>設立</span><span data-en>Established</span></dt><dd><span data-ja>2025年8月1日</span><span data-en>August 1, 2025</span></dd></div>
-        <div class="data"><dt><span data-ja>資本金</span><span data-en>Capital</span></dt><dd><span data-ja>500万円</span><span data-en>JPY 5,000,000</span></dd></div>
-        <div class="data"><dt><span data-ja>代表取締役</span><span data-en>Representative Director</span></dt><dd><span data-ja>焦 俊（JIAO JUN）</span><span data-en>JIAO JUN（焦 俊）</span></dd></div>
-        <div class="data"><dt><span data-ja>本店所在地</span><span data-en>Registered office</span></dt><dd><span data-ja>〒543-0023 大阪府大阪市天王寺区味原町1番17号503号室</span><span data-en>1-17-503 Ajiharacho, Tennoji-ku, Osaka 543-0023, Japan</span></dd></div>
-        <div class="data"><dt><span data-ja>公開窓口</span><span data-en>Public contact</span></dt><dd><a href="mailto:contact@dreamplaylab.com">contact@dreamplaylab.com</a><small>https://dreamplaylab.com/</small></dd></div>
-      </dl>
+    <div class="section-head">
+      <span class="eyebrow gold"><span data-ja>協働できること</span><span data-en>WHAT WE HELP WITH</span></span>
+      <h2 class="title" id="help-title"><span data-ja>こんな場面で、お力になります。</span><span data-en>Where we can help.</span></h2>
+      <p class="lede">
+        <span data-ja>企画の構想づくりから、実際の制作・改善まで。最初の一歩を整理するところから、着実に進められる単位への分解までご支援します。</span>
+        <span data-en>From shaping an early concept through production and refinement — we help you frame the first step and break the work into units you can move on with confidence.</span>
+      </p>
     </div>
+    <div class="help-grid">
+      <article class="help-item">
+        <p class="no">SCENE 01</p>
+        <h3><span data-ja>新規タイトルの<br>企画・試作</span><span data-en>New title concepting<br>and prototyping</span></h3>
+        <p><span data-ja>アイデアを企画メモから、試せるカタチへ。対象と目指す体験を整理し、小さな試作で方向性を確かめます。</span><span data-en>We turn ideas into something you can try — clarifying the audience and intended experience, then testing direction with lightweight prototypes.</span></p>
+      </article>
+      <article class="help-item">
+        <p class="no">SCENE 02</p>
+        <h3><span data-ja>IPコンテンツの<br>ゲーム化・翻案</span><span data-en>IP adaptation and<br>interactive storytelling</span></h3>
+        <p><span data-ja>映像や物語などのコンテンツを、インタラクティブな体験へ翻案する企画と制作。既存の世界観を活かした設計をします。</span><span data-en>We plan and produce interactive adaptations of existing stories and visual worlds, building on what makes the original work resonate.</span></p>
+      </article>
+      <article class="help-item">
+        <p class="no">SCENE 03</p>
+        <h3><span data-ja>AIを活かした<br>制作支援</span><span data-en>AI-enabled<br>production support</span></h3>
+        <p><span data-ja>画像・動画・物語の生成ワークフローを制作に組み込み、企画の検証と素材づくりを効率的に進めます。</span><span data-en>We bring image, video, and narrative generation workflows into daily production, speeding up validation and asset creation.</span></p>
+      </article>
+    </div>
+    <p class="help-note">
+      <span data-ja>これらの取り組みは、次の3つの事業領域として整理しています。</span>
+      <span data-en>These engagements draw on three business areas:</span>
+      <a href="#business"><span data-ja>事業領域を見る</span><span data-en>explore our work</span></a>
+    </p>
   </div>
 </section>
 
-<!-- Business Focus -->
+<!-- Business Focus / 事業領域 -->
 <section id="business" aria-labelledby="business-title">
   <div class="wrap">
     <div class="section-head">
@@ -438,19 +424,19 @@
       <article class="focus-card">
         <p class="num">01 / GAME</p>
         <h3><span data-ja>ゲーム開発</span><span data-en>Game Development</span></h3>
-        <p><span data-ja>企画、ゲーム体験設計、デジタルコンテンツの制作を通じて、プレイヤーに届く作品づくりに取り組みます。</span><span data-en>We work on planning, game experience design, and digital content production to bring ideas closer to players.</span></p>
+        <p><span data-ja>企画、ゲーム体験の設計、デジタルコンテンツの制作を通じて、プレイヤーに届く作品づくりを進めます。</span><span data-en>We work on planning, game experience design, and digital content production to bring ideas closer to players.</span></p>
         <span class="tag">GAME DEVELOPMENT</span>
       </article>
       <article class="focus-card c2">
         <p class="num">02 / INTERACTIVE</p>
         <h3><span data-ja>AIインタラクティブ<br>コンテンツ</span><span data-en>AI Interactive<br>Content</span></h3>
-        <p><span data-ja>AIを活用し、映像・物語・ユーザー参加を組み合わせた新しいインタラクティブ表現を探求します。</span><span data-en>We explore interactive expression that combines AI, moving images, stories, and audience participation.</span></p>
+        <p><span data-ja>AIを活用し、映像・物語・参加体験を組み合わせた新しいインタラクティブ表現を探求します。</span><span data-en>We explore interactive expression that combines AI, moving images, stories, and audience participation.</span></p>
         <span class="tag">AI INTERACTIVE CONTENT</span>
       </article>
       <article class="focus-card c3">
         <p class="num">03 / CREATIVE</p>
         <h3><span data-ja>クリエイティブ制作</span><span data-en>Creative Production</span></h3>
-        <p><span data-ja>画像、動画、3Dなどの表現手法を組み合わせ、企画段階から制作を支援します。</span><span data-en>We combine image, video, 3D, and other media to support creative work from the planning stage.</span></p>
+        <p><span data-ja>画像、動画、3Dなどの表現手法を組み合わせ、企画段階からの制作を支援します。</span><span data-en>We combine image, video, 3D, and other media to support creative work from the planning stage.</span></p>
         <span class="tag">CREATIVE PRODUCTION</span>
       </article>
     </div>
@@ -468,7 +454,7 @@
           <span data-en>Nuri<br>Creative Workspace</span>
         </h2>
         <p class="lede">
-          <span data-ja>Nuriは当社が運用するAI創作ワークスペースです。画像・動画の生成、キャンバス上での整理、参照素材を使った制作を一つの画面で扱えます。</span>
+          <span data-ja>Nuriは、当社が運用するAI創作ワークスペースです。画像・動画の生成、キャンバス上での整理、参照素材を使った制作を、ひとつの画面で行えます。</span>
           <span data-en>Nuri is a DreamPlay-operated workspace for image and video generation, canvas-based organization, and creation using reference materials.</span>
         </p>
         <div class="nuri-list">
@@ -477,8 +463,8 @@
           <div><b></b><span data-ja>参照素材を使った制作</span><span data-en>Creation using reference materials</span></div>
         </div>
         <p class="nuri-note">
-          <span data-ja>画面や利用条件は継続的に更新されます。ご利用の可否・条件は個別にお問い合わせください。</span>
-          <span data-en>The interface, access conditions, and available features may change. Please contact us about current availability and terms.</span>
+          <span data-ja>公開しているのはログイン画面のみです。画面や利用条件は継続的に更新されるため、ご利用の可否・条件は個別にご相談ください。</span>
+          <span data-en>Only the login page is public. The interface and access conditions change over time, so please contact us about current availability and terms.</span>
         </p>
       </div>
       <div class="nuri-panel">
@@ -499,42 +485,42 @@
   </div>
 </section>
 
-<!-- Collaboration Flow -->
+<!-- Collaboration Flow / 協働の流れ -->
 <section id="flow" aria-labelledby="flow-title">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow"><span data-ja>協働の流れ</span><span data-en>PROCESS</span></span>
-      <h2 class="title" id="flow-title"><span data-ja>対話から、次の一歩をともに見つけます。</span><span data-en>Start with a conversation, then find the next step.</span></h2>
+      <h2 class="title" id="flow-title"><span data-ja>ご相談から、次の一歩をともに見つけます。</span><span data-en>From first conversation to the next step.</span></h2>
       <p class="lede">
-        <span data-ja>大きい約束より、確認できる範囲の次の一歩を優先します。</span>
-        <span data-en>We prioritize a confirmable next step over big promises.</span>
+        <span data-ja>大きな約束よりも、確実に進められる次の一歩を優先します。</span>
+        <span data-en>We prioritize a next step you can act on over big promises.</span>
       </p>
     </div>
     <div class="steps">
       <article class="fstep">
         <div class="circle">01</div>
-        <h3><span data-ja>対話する</span><span data-en>Discuss</span></h3><span class="en">DISCUSS</span>
-        <p><span data-ja>目的、対象、表現の方向性を伺い、検討する範囲を整理します。</span><span data-en>We listen for the objective, audience, and intended expression, then define the area to explore.</span></p>
+        <h3><span data-ja>ご相談</span><span data-en>Discuss</span></h3><span class="en">DISCUSS</span>
+        <p><span data-ja>目的、対象、表現の方向性を伺い、検討する範囲を整理します。</span><span data-en>We listen for the objective, audience, and intended expression, then frame the scope to explore.</span></p>
       </article>
       <article class="fstep">
         <div class="circle">02</div>
-        <h3><span data-ja>試してみる</span><span data-en>Try</span></h3><span class="en">TRY</span>
+        <h3><span data-ja>試作</span><span data-en>Try</span></h3><span class="en">TRY</span>
         <p><span data-ja>必要に応じて、プロトタイプや制作サンプルで考え方を共有します。</span><span data-en>When useful, we use prototypes or creative samples to make an approach tangible.</span></p>
       </article>
       <article class="fstep">
         <div class="circle">03</div>
-        <h3><span data-ja>組み立てる</span><span data-en>Structure</span></h3><span class="en">STRUCTURE</span>
-        <p><span data-ja>内容、制作方法、進め方を、実現可能な単位に分けます。</span><span data-en>We break the content, working method, and path forward into achievable units.</span></p>
+        <h3><span data-ja>構成</span><span data-en>Structure</span></h3><span class="en">STRUCTURE</span>
+        <p><span data-ja>内容と進め方を、実現可能な単位に分けて整理します。</span><span data-en>We break the content and the path forward into achievable units.</span></p>
       </article>
       <article class="fstep">
         <div class="circle">04</div>
-        <h3><span data-ja>育てる</span><span data-en>Grow</span></h3><span class="en">GROW</span>
-        <p><span data-ja>結果を振り返りながら、表現とプロセスを継続的に改善します。</span><span data-en>We review results and continue improving the expression and the process.</span></p>
+        <h3><span data-ja>改善</span><span data-en>Grow</span></h3><span class="en">GROW</span>
+        <p><span data-ja>結果を振り返りながら、表現とプロセスを継続的に改善します。</span><span data-en>We review results and keep improving both the expression and the process.</span></p>
       </article>
     </div>
     <div class="rhythm">
       <h3>
-        <span data-ja>初回の対話で確認すること</span>
+        <span data-ja>初回のお打ち合わせで確認すること</span>
         <span data-en>What the first conversation covers</span>
         <small>FIRST CONVERSATION</small>
       </h3>
@@ -542,29 +528,29 @@
         <div class="rhythm-item">
           <b>CONFIRM</b>
           <strong><span data-ja>確認する</span><span data-en>Confirm</span></strong>
-          <p><span data-ja>誰に向けた体験か。どの段階の企画か。どの表現を試したいか。</span><span data-en>Who the experience is for, which stage the project is at, and which expression you want to try.</span></p>
+          <p><span data-ja>誰に向けた体験か。企画はどの段階か。どの表現を試したいか。</span><span data-en>Who the experience is for, which stage the project is at, and which expression you want to try.</span></p>
         </div>
         <div class="rhythm-item">
           <b>SHARE</b>
           <strong><span data-ja>共有する</span><span data-en>Share</span></strong>
-          <p><span data-ja>ゲーム開発、AIインタラクティブコンテンツ、クリエイティブ制作という当社の取り組み。</span><span data-en>Our work across game development, AI interactive content, and creative production.</span></p>
+          <p><span data-ja>ゲーム開発、AIインタラクティブコンテンツ、クリエイティブ制作での当社の取り組み。</span><span data-en>Our work across game development, AI interactive content, and creative production.</span></p>
         </div>
         <div class="rhythm-item">
           <b>SHOW</b>
-          <strong><span data-ja>見せる</span><span data-en>Show</span></strong>
-          <p><span data-ja>確認済みの公開画面と準備済みの素材。実現済みの内容と未確認事項を分けて。</span><span data-en>Verified public screens and prepared materials — separating what is built from what is unconfirmed.</span></p>
+          <strong><span data-ja>ご提示する</span><span data-en>Show</span></strong>
+          <p><span data-ja>公開できる画面と制作素材。実現済みの内容と、これから確定する事柄を分けてご提示します。</span><span data-en>Public screens and production materials — clearly separating what is built from what is still open.</span></p>
         </div>
         <div class="rhythm-item">
           <b>DECIDE</b>
           <strong><span data-ja>決める</span><span data-en>Decide</span></strong>
-          <p><span data-ja>次に確認する事項、必要な素材、目安の期限を、一つのアクションに。</span><span data-en>One next action: what to confirm, which materials, and a rough timeline.</span></p>
+          <p><span data-ja>次に確認すること、必要な素材、目安の時期を、ひとつの行動にまとめます。</span><span data-en>One next action: what to confirm, which materials, and a rough timeline.</span></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact / Conversation CTA -->
+<!-- Contact / お問い合わせ -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="section-head">
@@ -572,7 +558,7 @@
       <h2 class="title" id="contact-title"><span data-ja>次の一歩を、いっしょに決めませんか。</span><span data-en>Let's decide the next step — together.</span></h2>
       <p class="lede">
         <span data-ja>検討中のアイデアや、つくりたい体験についてお聞かせください。内容を拝見し、次に確認したいことをご案内します。</span>
-        <span data-en>Please tell us about the idea or experience you are considering. After reviewing the context, we will clarify what to confirm next.</span>
+        <span data-en>Tell us about the idea or experience you are considering. After reviewing the context, we will suggest what to clarify next.</span>
       </p>
     </div>
     <div class="contact-grid">
@@ -582,22 +568,22 @@
           <div><div class="t"><span data-ja>メール</span><span data-en>Email</span></div><div class="v"><a href="mailto:contact@dreamplaylab.com">contact@dreamplaylab.com</a></div></div>
         </div>
         <div class="info-row">
-          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div><div class="t"><span data-ja>所在地（本店）</span><span data-en>Registered office</span></div><div class="v"><span data-ja>〒543-0023 大阪府大阪市天王寺区味原町1番17号503号室</span><span data-en>1-17-503 Ajiharacho, Tennoji-ku, Osaka 543-0023, Japan</span></div></div>
-        </div>
-        <div class="info-row">
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
           <div><div class="t"><span data-ja>対応言語</span><span data-en>Languages</span></div><div class="v"><span data-ja>日本語 · English</span><span data-en>Japanese · English</span></div></div>
         </div>
+        <div class="info-row">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="12" rx="3"/><path d="m7 3 3 4M17 3l-3 4"/><path d="m8 13 2 2 4-4"/></svg></div>
+          <div><div class="t"><span data-ja>製品・実績</span><span data-en>Our work</span></div><div class="v"><a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a></div></div>
+        </div>
         <p class="boundary-note">
-          <span data-ja>価格、提供条件、導入可否、利用環境は事前に確定事項として扱わず、個別の確認後にご案内します。</span>
+          <span data-ja>価格、提供条件、導入可否、利用環境は事前に確定しているものとして扱わず、個別に確認のうえご案内します。</span>
           <span data-en>Pricing, terms, availability, and environments are not fixed in advance; we confirm them case by case before sharing details.</span>
         </p>
       </div>
 
       <div class="form-card">
-        <h3><span data-ja>最初のご相談</span><span data-en>Begin with a Conversation</span></h3>
-        <p class="sub"><span data-ja>以下をご入力いただくと、送信用メール本文が自動生成されます。</span><span data-en>Fill in the fields to generate a ready-to-send email draft.</span></p>
+        <h3><span data-ja>最初のご相談</span><span data-en>Start a Conversation</span></h3>
+        <p class="sub"><span data-ja>以下をご入力いただくと、送信用のメール本文が自動的に作成されます。</span><span data-en>Fill in the fields to generate a ready-to-send email draft.</span></p>
         <form id="inquiry-form" novalidate>
           <div class="field">
             <label for="f-company"><span data-ja>貴社名</span><span data-en>Company</span></label>
@@ -618,13 +604,13 @@
             </select>
           </div>
           <div class="field">
-            <label for="mail-draft"><span data-ja>生成されたメール本文</span><span data-en>Generated email body</span></label>
+            <label for="mail-draft"><span data-ja>作成されたメール本文</span><span data-en>Generated email body</span></label>
             <textarea class="mail-draft" id="mail-draft" readonly></textarea>
           </div>
           <div class="form-actions">
-            <a class="btn btn-primary" id="mail-open" href="mailto:contact@dreamplaylab.com"><span data-ja>メールアプリを開く</span><span data-en>Open mail client</span></a>
+            <a class="btn btn-primary" id="mail-open" href="mailto:contact@dreamplaylab.com"><span data-ja>メールアプリで開く</span><span data-en>Open in mail client</span></a>
           </div>
-          <p class="form-note"><span data-ja>※ 送信補助です。実際の送信前に内容をご確認ください。</span><span data-en>※ Draft helper only — please review before sending.</span></p>
+          <p class="form-note"><span data-ja>※ このフォームは送信用メールの下書きを作る機能です。実際の送信前に、メールアプリで内容をご確認ください。</span><span data-en>※ This helper only prepares a draft email — please review it in your mail client before sending.</span></p>
         </form>
       </div>
     </div>
@@ -643,11 +629,10 @@
       <span data-en>© 2026 DreamPlay Inc. — game development, AI interactive content, and creative production.</span>
     </p>
     <p class="foot-meta">
-      <span data-ja>〒543-0023 大阪府大阪市天王寺区味原町1番17号503号室</span><span data-en>1-17-503 Ajiharacho, Tennoji-ku, Osaka 543-0023, Japan</span><br>
       <a href="mailto:contact@dreamplaylab.com">contact@dreamplaylab.com</a>
     </p>
     <p class="foot-site">
-      <span data-ja>製品・実績サイト</span><span data-en>Products &amp; track record:</span> <a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a>
+      <span data-ja>製品・実績サイト</span><span data-en>Products &amp; work:</span> <a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a>
     </p>
   </div>
 </footer>
@@ -659,18 +644,18 @@ window.DP_MAIL = {
   openBtn: "#mail-open",
   fields: { company: "#f-company", email: "#f-email", intent: "#f-intent" },
   ja: {
-    subjectPrefix: "【初回のご相談】",
-    defaultSubject: "株式会社ドリームプレイ",
+    subjectPrefix: "【お問い合わせ】",
+    defaultSubject: "株式会社ドリームプレイへのお問い合わせ",
     salutation: ["株式会社ドリームプレイ ご担当者様"],
-    message: "貴社の目標と取り組みについてご相談したく、ご連絡いたしました。ご都合のよいときにご返信いただけますと幸いです。",
+    message: "貴社の取り組みと、実現したい体験についてご相談したく、ご連絡いたしました。ご都合のよろしいときにご返信いただけますと幸いです。",
     closing: "何卒よろしくお願いいたします。",
     labels: { company: "貴社名", email: "返信先", intent: "ご関心" }
   },
   en: {
-    subjectPrefix: "[First Conversation] ",
-    defaultSubject: "DreamPlay",
+    subjectPrefix: "[Inquiry] ",
+    defaultSubject: "Inquiry to DreamPlay Inc.",
     salutation: ["Hello DreamPlay team,"],
-    message: "We would like to start a conversation about your goals and current initiatives, and would appreciate your reply at your convenience.",
+    message: "We would like to discuss your work and the experience you are looking to build. We would appreciate your reply when convenient.",
     closing: "Best regards,",
     labels: { company: "Company", email: "Reply-to", intent: "Interest" }
   }
