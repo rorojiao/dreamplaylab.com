@@ -257,16 +257,9 @@
   .nuri-copy h2{margin-top:4px}
   .nuri-copy h2 small{display:block;margin-top:6px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:600}
   .nuri-copy .lede{margin-top:16px}
-  .nuri-list{margin-top:22px;display:grid;gap:11px}
-  .nuri-list div{display:flex;gap:12px;align-items:center;font-size:14.5px}
-  .nuri-list b{width:8px;height:8px;flex:none;border-radius:50%;background:var(--cyan)}
   .nuri-note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--gold);background:oklch(77.0% 0.113 84.1 / 0.08);color:var(--muted);font-size:13px;line-height:1.7;border-radius:0 10px 10px 0;max-width:52ch}
   .nuri-panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden}
-  .nuri-shot{position:relative;background:oklch(21.0% 0.017 248.7);padding:18px 18px 12px}
-  .nuri-shot::before{content:"";position:absolute;inset:0;opacity:.3;background-image:linear-gradient(oklch(81.9% 0.128 222.0 / 0.16) 1px,transparent 1px),linear-gradient(90deg,oklch(81.9% 0.128 222.0 / 0.16) 1px,transparent 1px);background-size:44px 44px}
-  .nuri-shot img{position:relative;width:100%;border:1px solid oklch(34.6% 0.043 273.2 / 0.8);border-radius:8px}
-  .nuri-shot .cap{position:relative;margin-top:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
-  .nuri-status{padding:16px 20px 18px;border-top:1px solid var(--border)}
+  .nuri-status{padding:20px 22px 22px}
   .status-row{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:baseline;padding:7px 0}
   .status-row + .status-row{border-top:1px solid oklch(34.6% 0.043 273.2 / 0.3)}
   .status-row b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);font-weight:600}
@@ -454,28 +447,18 @@
           <span data-en>Nuri<br>Creative Workspace</span>
         </h2>
         <p class="lede">
-          <span data-ja>Nuriは、当社が運用するAI創作ワークスペースです。画像・動画の生成、キャンバス上での整理、参照素材を使った制作を、ひとつの画面で行えます。</span>
-          <span data-en>Nuri is a DreamPlay-operated workspace for image and video generation, canvas-based organization, and creation using reference materials.</span>
+          <span data-ja>Nuriは、当社が運用するAI創作ワークスペースです。</span>
+          <span data-en>Nuri is an AI creative workspace operated by DreamPlay.</span>
         </p>
-        <div class="nuri-list">
-          <div><b></b><span data-ja>画像・動画の生成ワークフロー</span><span data-en>Image and video generation workflows</span></div>
-          <div><b></b><span data-ja>キャンバス上での構成・整理</span><span data-en>Composition and organization on a canvas</span></div>
-          <div><b></b><span data-ja>参照素材を使った制作</span><span data-en>Creation using reference materials</span></div>
-        </div>
         <p class="nuri-note">
-          <span data-ja>無限キャンバスの作業例を通して、素材と参照関係を扱う制作の様子をご覧いただけます。画面や利用条件は継続的に更新されるため、ご利用の可否・条件は個別にご相談ください。</span>
-          <span data-en>The infinite-canvas example shows how assets and references can be organized in a creative workflow. The interface and access conditions change over time, so please contact us about current availability and terms.</span>
+          <span data-ja>Nuriのご利用をご検討の方は、まずお問い合わせください。進め方はご相談のうえご案内します。</span>
+          <span data-en>If you are considering Nuri, please contact us first — we will discuss the way forward together.</span>
         </p>
       </div>
       <div class="nuri-panel">
-        <div class="nuri-shot">
-          <img src="assets/nuri-infinite-canvas-workflow.png" alt="Nuri infinite canvas workspace showing linked visual references" loading="lazy">
-          <p class="cap"><span data-ja>提供資料：無限キャンバス上で素材と参照関係をつなぐ作業例</span><span data-en>Provided example: a working view linking assets and references on an infinite canvas</span></p>
-        </div>
         <div class="nuri-status">
-          <div class="status-row"><b>WORKSPACE</b><span class="ok"><span data-ja>提供資料の作業例</span><span data-en>Provided working example</span></span></div>
           <div class="status-row"><b>NURI URL</b><span><a href="https://nuri.dreamplaylab.com/login" target="_blank" rel="noopener">https://nuri.dreamplaylab.com/login</a></span></div>
-          <div class="status-row"><b>AVAILABILITY</b><span><span data-ja>利用可否は個別にご相談ください</span><span data-en>Please contact us to confirm availability</span></span></div>
+          <div class="status-row"><b>ACCESS</b><span><span data-ja>まずはお問い合わせください</span><span data-en>Please contact us first</span></span></div>
           <div class="nuri-actions">
             <a class="btn btn-primary btn-external" href="https://nuri.dreamplaylab.com/login" target="_blank" rel="noopener"><span data-ja>Nuriを開く</span><span data-en>Open Nuri</span></a>
           </div>
@@ -576,8 +559,8 @@
           <div><div class="t"><span data-ja>製品・実績</span><span data-en>Our work</span></div><div class="v"><a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a></div></div>
         </div>
         <p class="boundary-note">
-          <span data-ja>価格、提供条件、導入可否、利用環境は事前に確定しているものとして扱わず、個別に確認のうえご案内します。</span>
-          <span data-en>Pricing, terms, availability, and environments are not fixed in advance; we confirm them case by case before sharing details.</span>
+          <span data-ja>ご相談の中で、目的に合わせた進め方をご一緒に決めてまいります。</span>
+          <span data-en>We shape the approach together with you, around what you want to discuss.</span>
         </p>
       </div>
 
