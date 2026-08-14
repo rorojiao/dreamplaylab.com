@@ -271,6 +271,16 @@
   .nuri-actions .btn{padding:11px 18px;font-size:14px}
   .btn-external::after{content:"↗";font-family:var(--font-mono);font-size:13px}
 
+  /* —— Nuri：制作イメージギャラリー（AI 生成概念插画，2026-08-15 第五轮） —— */
+  .nuri-gallery{margin-top:36px}
+  .nuri-gallery .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .nuri-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--border);filter:saturate(.98);transition:transform .35s,filter .35s}
+  .nuri-gallery img:hover{transform:scale(1.03);filter:saturate(1.08)}
+  .nuri-gallery figcaption{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.6}
+  @media (max-width:980px){
+    .nuri-gallery .gallery{grid-template-columns:repeat(2,1fr)}
+  }
+
   /* —— Flow：横4ステップ + 初回のお打ち合わせ —— */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;margin-bottom:46px}
   .steps::before{content:"";position:absolute;top:30px;left:36px;right:36px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--gold) 50%,var(--mint))}
@@ -465,6 +475,18 @@
         </div>
       </div>
     </div>
+    <figure class="nuri-gallery">
+      <div class="gallery">
+        <img src="assets/nuri-canvas-wide.jpg" alt="Nuri workspace concept illustration — art cards connected on an infinite canvas / 無限キャンバス上の制作イメージ（イラスト）：素材カードが線でつながる" loading="lazy">
+        <img src="assets/nuri-creator-anime.jpg" alt="Concept illustration — a creator organizing glowing material cards / 制作イメージ（イラスト）：キャンバスの前で素材を整理するクリエイター" loading="lazy">
+        <img src="assets/nuri-materials-cluster.jpg" alt="Concept illustration — connected material cards for characters, palettes and scenes / 制作イメージ（イラスト）：キャラクター・配色・風景の素材カードのつながり" loading="lazy">
+        <img src="assets/nuri-graph-horizon.jpg" alt="Concept illustration — a canvas of connected materials spreading wide / 制作イメージ（イラスト）：広がるキャンバス上の素材グラフ" loading="lazy">
+      </div>
+      <figcaption>
+        <span data-ja>※ 画像はすべて制作イメージ（イラスト）です。サービスの画面・機能を示すものではありません。</span>
+        <span data-en>※ All images are concept illustrations — not product screenshots or feature claims.</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
