@@ -121,6 +121,95 @@
   .lang-switch button.active{background:var(--cyan);color:#0a1020}
   .lang-switch button:not(.active):hover{color:var(--fg)}
 
+  /* —— Nav dropdown（2026-08-16：主导航子菜单，点击展开→子项跳转）—— */
+  .nav-item{position:relative;display:inline-flex}
+  .nav-item > .nav-parent::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--cyan);transition:width .25s}
+  .nav-item.open > .nav-parent{color:var(--fg)}
+  .nav-item.open > .nav-parent::after{width:100%}
+  .nav-caret{width:10px;height:10px;margin-left:4px;opacity:.65;transition:transform .25s ease;flex-shrink:0}
+  .nav-item.open .nav-caret{transform:rotate(180deg)}
+  .nav-drop{
+    position:absolute;top:calc(100% + 14px);left:50%;
+    transform:translateX(-50%) translateY(-8px) scale(.98);transform-origin:top center;
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .22s ease,transform .22s ease,visibility .22s;
+    min-width:300px;max-width:min(88vw,380px);
+    background:oklch(16.5% 0.020 268.3 / 0.94);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--border);border-radius:14px;padding:10px;
+    box-shadow:0 20px 52px oklch(0% 0 0 / .5);
+  }
+  .nav-drop::before{
+    content:"";position:absolute;top:-5.5px;left:50%;transform:translateX(-50%) rotate(45deg);
+    width:10px;height:10px;background:oklch(16.5% 0.020 268.3 / 0.94);
+    border-left:1px solid var(--border);border-top:1px solid var(--border);
+  }
+  .nav-item.open > .nav-drop{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0) scale(1)}
+  .drop-link{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;transition:background .18s ease}
+  .drop-link:hover,.drop-link:focus-visible{background:oklch(81.9% 0.128 222.0 / 0.08);outline:none}
+  .drop-link .dl-num{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--gold);margin-top:2px;min-width:18px}
+  .drop-link b{display:block;font-size:13.5px;font-weight:600;color:var(--fg);line-height:1.45;font-family:var(--font-display)}
+  .drop-link small{display:block;margin-top:3px;font-size:11.5px;color:var(--muted);line-height:1.55}
+  .drop-link .dl-ext{color:var(--cyan);font-family:var(--font-mono);font-size:12px;margin-top:2px}
+  /* 子项 stagger 入场 */
+  .nav-drop .drop-link{opacity:0;transform:translateY(-6px);transition:opacity .28s ease,transform .28s ease,background .18s ease}
+  .nav-item.open .drop-link{opacity:1;transform:none}
+  .nav-item.open .drop-link:nth-child(1){transition-delay:.03s}
+  .nav-item.open .drop-link:nth-child(2){transition-delay:.07s}
+  .nav-item.open .drop-link:nth-child(3){transition-delay:.11s}
+  .nav-item.open .drop-link:nth-child(4){transition-delay:.15s}
+  .nav-item.open .drop-link:nth-child(5){transition-delay:.19s}
+
+  /* —— 移动端抽屉（≤720px 与 nav-links 互换；JS 生成，no-JS 不渲染）—— */
+  .nav-burger{display:none}
+  .nav-drawer{
+    position:fixed;top:var(--header-h);left:0;right:0;z-index:49;
+    background:oklch(14% 0.020 268.3 / 0.97);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+    max-height:calc(100dvh - var(--header-h));overflow-y:auto;
+    padding:8px 18px 24px;
+    opacity:0;visibility:hidden;transform:translateY(-10px);
+    transition:opacity .28s ease,transform .28s ease,visibility .28s;
+  }
+  .nav-drawer.open{opacity:1;visibility:visible;transform:none}
+  .drawer-row{border-bottom:1px solid oklch(34.6% 0.043 273.2 / 0.35)}
+  .drawer-row:last-child{border-bottom:none}
+  .drawer-parent{
+    display:flex;width:100%;align-items:center;justify-content:space-between;gap:10px;
+    min-height:52px;background:none;border:none;color:var(--fg);
+    font-size:15.5px;font-weight:600;font-family:var(--font-display);
+    cursor:pointer;padding:8px 2px;text-align:left;
+  }
+  .drawer-parent:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:6px}
+  .drawer-row.open .drawer-parent .nav-caret{transform:rotate(180deg)}
+  .drawer-sub{overflow:hidden;max-height:0;transition:max-height .32s ease}
+  .drawer-sub a{
+    display:flex;align-items:baseline;gap:10px;
+    padding:12px 2px 12px 14px;margin:2px 0 10px;
+    border-left:2px solid var(--cyan);font-size:13.5px;color:var(--muted);min-height:44px;
+  }
+  .drawer-sub a:hover{color:var(--fg)}
+  .drawer-sub a .dl-num{font-family:var(--font-mono);font-size:10.5px;color:var(--gold)}
+  .drawer-sub a .dl-ext{color:var(--cyan);font-family:var(--font-mono);font-size:11.5px}
+  .drawer-plain{display:flex;align-items:center;min-height:52px;font-size:15.5px;font-weight:600;font-family:var(--font-display);color:var(--fg)}
+  @media (max-width:720px){
+    .nav-links{display:none}
+    .nav-burger{
+      display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+      width:44px;height:44px;padding:11px;background:var(--surface);
+      border:1px solid var(--border);border-radius:10px;cursor:pointer;
+    }
+    .nav-burger span{display:block;width:100%;height:2px;background:var(--fg);border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+    .nav-burger:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+    .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .nav-drop,.nav-drop .drop-link,.nav-caret,.nav-drawer,.drawer-sub,.nav-burger span{transition:none!important}
+  }
+
   /* —— 按钮 —— */
   .btn{
     display:inline-flex;align-items:center;gap:8px;
@@ -432,11 +521,47 @@
       <span>株式会社ドリームプレイ<small>DreamPlay Inc.</small></span>
     </a>
     <div class="nav-links">
-      <a href="#business"><span data-ja>事業領域</span><span data-en>Business</span></a>
-      <a href="#demos"><span data-ja>制作デモ</span><span data-en>Demos</span></a>
-      <a href="#nuri"><span data-ja>Nuri</span><span data-en>Nuri</span></a>
-      <a href="#chuk"><span data-ja>Chuk</span><span data-en>Chuk</span></a>
-      <a href="#flow"><span data-ja>協働の流れ</span><span data-en>Process</span></a>
+      <div class="nav-item">
+        <a class="nav-parent" href="#business"><span data-ja>事業領域</span><span data-en>Business</span><svg class="nav-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg></a>
+        <div class="nav-drop">
+          <a class="drop-link" href="#area-ai"><span class="dl-num">01</span><span class="dl-body"><b><span data-ja>AIインタラクティブコンテンツ</span><span data-en>AI Interactive Content</span></b><small><span data-ja>映像・物語・参加体験を組み合わせた表現</span><span data-en>Video, story &amp; participation, combined with AI</span></small></span></a>
+          <a class="drop-link" href="#area-creative"><span class="dl-num">02</span><span class="dl-body"><b><span data-ja>クリエイティブ制作</span><span data-en>Creative Production</span></b><small><span data-ja>画像・動画・3Dでの制作支援</span><span data-en>Image, video &amp; 3D support</span></small></span></a>
+          <a class="drop-link" href="#area-game"><span class="dl-num">03</span><span class="dl-body"><b><span data-ja>ゲーム開発（受託）</span><span data-en>Game Development</span></b><small><span data-ja>企画から制作まで承ります</span><span data-en>Commissioned, from planning to production</span></small></span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-parent" href="#demos"><span data-ja>制作デモ</span><span data-en>Demos</span><svg class="nav-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg></a>
+        <div class="nav-drop">
+          <a class="drop-link" href="#demo-liveaction"><span class="dl-num">01</span><span class="dl-body"><b><span data-ja>実写風ショートフィルム</span><span data-en>Live-Action-Style Short</span></b><small><span data-ja>雨の街で交わされる、ふたりの物語</span><span data-en>A two-person story on rain-soaked streets</span></small></span></a>
+          <a class="drop-link" href="#demo-anime"><span class="dl-num">02</span><span class="dl-body"><b><span data-ja>東京綺譚 — アニメーション</span><span data-en>Tokyo Mysteria — Animation</span></b><small><span data-ja>渋谷の夜にはじまる不思議な出会い</span><span data-en>A mysterious encounter in Shibuya</span></small></span></a>
+          <a class="drop-link" href="#demo-cyberpunk"><span class="dl-num">03</span><span class="dl-body"><b><span data-ja>新宿2077 — サイバーパンク</span><span data-en>Shinjuku 2077 — Cyberpunk</span></b><small><span data-ja>雨の新宿を駆ける賞金稼ぎの一夜</span><span data-en>A bounty hunter's night in Shinjuku</span></small></span></a>
+          <a class="drop-link" href="#demo-vtuber"><span class="dl-num">04</span><span class="dl-body"><b><span data-ja>V-Style — VTuberスタイル集</span><span data-en>V-Style — VTuber Variations</span></b><small><span data-ja>ひとりのキャラクターを、5つの世界観へ</span><span data-en>One character, five worlds</span></small></span></a>
+          <a class="drop-link" href="#demo-brand"><span class="dl-num">05</span><span class="dl-body"><b><span data-ja>Brand Reborn — ブランドフィルム</span><span data-en>Brand Reborn — Brand Film</span></b><small><span data-ja>伝統工芸の魅力を短い映像で</span><span data-en>A traditional craft, told short</span></small></span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-parent" href="#nuri"><span data-ja>Nuri</span><span data-en>Nuri</span><svg class="nav-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg></a>
+        <div class="nav-drop">
+          <a class="drop-link" href="#nuri"><span class="dl-num">01</span><span class="dl-body"><b><span data-ja>Nuriとは</span><span data-en>About Nuri</span></b><small><span data-ja>当社が運用するAI創作ワークスペース</span><span data-en>Our AI creative workspace</span></small></span></a>
+          <a class="drop-link" href="#nuri-access"><span class="dl-num">02</span><span class="dl-body"><b><span data-ja>アクセス</span><span data-en>Access</span></b><small><span data-ja>まずはお問い合わせください</span><span data-en>Contact us first</span></small></span></a>
+          <a class="drop-link is-external" href="https://nuri.dreamplaylab.com/login" target="_blank" rel="noopener"><span class="dl-num">↗</span><span class="dl-body"><b><span data-ja>Nuriを開く</span><span data-en>Open Nuri</span></b><small>nuri.dreamplaylab.com</small></span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-parent" href="#chuk"><span data-ja>Chuk</span><span data-en>Chuk</span><svg class="nav-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg></a>
+        <div class="nav-drop">
+          <a class="drop-link" href="#chuk"><span class="dl-num">01</span><span class="dl-body"><b><span data-ja>サービス概要</span><span data-en>Overview</span></b><small><span data-ja>中国発の先端AIモデルを、APIひとつで</span><span data-en>China's frontier models, one API</span></small></span></a>
+          <a class="drop-link" href="#chuk-features"><span class="dl-num">02</span><span class="dl-body"><b><span data-ja>特徴</span><span data-en>Features</span></b><small><span data-ja>互換性・プラングループ・エンドポイント</span><span data-en>Compatibility, plan groups, endpoints</span></small></span></a>
+          <a class="drop-link is-external" href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener"><span class="dl-num">↗</span><span class="dl-body"><b><span data-ja>Chukを開く</span><span data-en>Open Chuk</span></b><small>chuk.dreamplaylab.com</small></span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-parent" href="#flow"><span data-ja>協業の流れ</span><span data-en>Process</span><svg class="nav-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg></a>
+        <div class="nav-drop">
+          <a class="drop-link" href="#flow-steps"><span class="dl-num">01</span><span class="dl-body"><b><span data-ja>4つのステップ</span><span data-en>Four Steps</span></b><small><span data-ja>ご相談・試作・構成・改善</span><span data-en>Discuss, try, structure, grow</span></small></span></a>
+          <a class="drop-link" href="#first-meeting"><span class="dl-num">02</span><span class="dl-body"><b><span data-ja>初回のお打ち合わせ</span><span data-en>First Conversation</span></b><small><span data-ja>確認する4つのこと</span><span data-en>What we confirm together</span></small></span></a>
+        </div>
+      </div>
       <a href="#contact"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>
     </div>
     <div class="lang-switch" role="group" aria-label="Language">
@@ -466,11 +591,11 @@
   </div>
 </header>
 
-<!-- What we help with / 協働できること -->
+<!-- What we help with / 協業できること -->
 <section id="help" aria-labelledby="help-title">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow gold"><span data-ja>協働できること</span><span data-en>WHAT WE HELP WITH</span></span>
+      <span class="eyebrow gold"><span data-ja>協業できること</span><span data-en>WHAT WE HELP WITH</span></span>
       <h2 class="title" id="help-title"><span data-ja>こんな場面で、お力になります。</span><span data-en>Where we can help.</span></h2>
       <p class="lede">
         <span data-ja>企画の構想づくりから、実際の制作・改善まで。最初の一歩を整理するところから、着実に進められる単位への分解までご支援します。</span>
@@ -514,19 +639,19 @@
       </p>
     </div>
     <div class="focus-grid">
-      <article class="focus-card">
+      <article class="focus-card" id="area-ai">
         <p class="num">01 / INTERACTIVE</p>
         <h3><span data-ja>AIインタラクティブ<br>コンテンツ</span><span data-en>AI Interactive<br> Content</span></h3>
         <p><span data-ja>AIを活用し、映像・物語・参加体験を組み合わせた新しいインタラクティブ表現を探求します。</span><span data-en>We explore interactive expression that combines AI, moving images, stories, and audience participation.</span></p>
         <span class="tag">AI INTERACTIVE CONTENT</span>
       </article>
-      <article class="focus-card c2">
+      <article class="focus-card c2" id="area-creative">
         <p class="num">02 / CREATIVE</p>
         <h3><span data-ja>クリエイティブ制作</span><span data-en>Creative Production</span></h3>
         <p><span data-ja>画像、動画、3Dなどの表現手法を組み合わせ、企画段階からの制作を支援します。</span><span data-en>We combine image, video, 3D, and other media to support creative work from the planning stage.</span></p>
         <span class="tag">CREATIVE PRODUCTION</span>
       </article>
-      <article class="focus-card c3">
+      <article class="focus-card c3" id="area-game">
         <p class="num">03 / GAME</p>
         <h3><span data-ja>ゲーム開発</span><span data-en>Game Development</span></h3>
         <p><span data-ja>ゲームの企画・開発を受託し、体験設計からデジタルコンテンツの制作までを承ります。</span><span data-en>We take on game planning and development as commissioned work — from experience design through digital content production.</span></p>
@@ -540,15 +665,15 @@
 <section id="demos" aria-labelledby="demos-title">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow gold"><span data-ja>制作デモ</span><span data-en>AI ANIMATION DEMOS</span></span>
-      <h2 class="title" id="demos-title"><span data-ja>AIアニメ制作の実例をご覧ください。</span><span data-en>See our AI animation work in motion.</span></h2>
+      <span class="eyebrow gold"><span data-ja>制作デモ</span><span data-en>AI VIDEO DEMOS</span></span>
+      <h2 class="title" id="demos-title"><span data-ja>AIによる動画制作の実例をご覧ください。</span><span data-en>See our AI video production in motion.</span></h2>
       <p class="lede">
-        <span data-ja>すべてAI生成による制作デモです。アニメ、ブランド映像、実写風など、目的に合わせたトーンで短い映像を制作します。</span>
-        <span data-en>Every clip below is an AI-generated production demo — anime, brand films, and live-action-style pieces in the tone your project calls for.</span>
+        <span data-ja>すべてAI生成による制作デモです。アニメーションからブランド映像、実写風まで、目的に合わせたトーンで短い映像を制作します。</span>
+        <span data-en>Every clip below is an AI-generated production demo — animation, brand films, and live-action-style pieces in the tone your project calls for.</span>
       </p>
     </div>
     <div class="demo-grid">
-      <article class="demo-card">
+      <article class="demo-card" id="demo-liveaction">
         <video controls playsinline preload="none" poster="assets/demo5-live-action-poster.jpg" src="assets/demo5-live-action.mp4" aria-label="制作デモ動画（AI生成）：実写風ショートフィルム"></video>
         <div class="demo-body">
           <h3><span data-ja>実写風ショートフィルム</span><span data-en>Live-Action-Style Short</span></h3>
@@ -556,7 +681,7 @@
           <p><span data-ja>雨の街で交わされる、ふたりの物語。台詞と情景を含む短編です。</span><span data-en>A two-person story on rain-soaked streets — a short film with dialogue and atmosphere.</span></p>
         </div>
       </article>
-      <article class="demo-card">
+      <article class="demo-card" id="demo-anime">
         <video controls playsinline preload="none" poster="assets/demo1-tokyo-mysteria-poster.jpg" src="assets/demo1-tokyo-mysteria.mp4" aria-label="制作デモ動画（AI生成）：東京綺譚 アニメファンタジー"></video>
         <div class="demo-body">
           <h3><span data-ja>東京綺譚 — アニメファンタジー</span><span data-en>Tokyo Mysteria — Anime Fantasy</span></h3>
@@ -564,7 +689,7 @@
           <p><span data-ja>渋谷の夜にはじまる、不思議な出会いの物語。</span><span data-en>A mysterious encounter unfolds in the neon night of Shibuya.</span></p>
         </div>
       </article>
-      <article class="demo-card">
+      <article class="demo-card" id="demo-cyberpunk">
         <video controls playsinline preload="none" poster="assets/demo3-shinjuku-2077-poster.jpg" src="assets/demo3-shinjuku-2077.mp4" aria-label="制作デモ動画（AI生成）：新宿2077 サイバーパンク"></video>
         <div class="demo-body">
           <h3><span data-ja>新宿2077 — サイバーパンク</span><span data-en>Shinjuku 2077 — Cyberpunk</span></h3>
@@ -572,7 +697,7 @@
           <p><span data-ja>雨の新宿を駆ける、賞金稼ぎの一夜。</span><span data-en>A bounty hunter's night, racing through rain-lit Shinjuku.</span></p>
         </div>
       </article>
-      <article class="demo-card">
+      <article class="demo-card" id="demo-vtuber">
         <video controls playsinline preload="none" poster="assets/demo4-vtuber-styles-poster.jpg" src="assets/demo4-vtuber-styles.mp4" aria-label="制作デモ動画（AI生成）：VTuberスタイルバリエーション"></video>
         <div class="demo-body">
           <h3><span data-ja>V-Style — VTuberスタイル集</span><span data-en>V-Style — VTuber Variations</span></h3>
@@ -580,7 +705,7 @@
           <p><span data-ja>ひとりのキャラクターを、5つの世界観へ。</span><span data-en>One character, five worlds — style exploration in five directions.</span></p>
         </div>
       </article>
-      <article class="demo-card">
+      <article class="demo-card" id="demo-brand">
         <video controls playsinline preload="none" poster="assets/demo2-brand-reborn-poster.jpg" src="assets/demo2-brand-reborn.mp4" aria-label="制作デモ動画（AI生成）：ブランドフィルム KISARAGI"></video>
         <div class="demo-body">
           <h3><span data-ja>Brand Reborn — ブランドフィルム</span><span data-en>Brand Reborn — Brand Film</span></h3>
@@ -590,7 +715,7 @@
       </article>
       <div class="demo-cta">
         <h3><span data-ja>ほかのトーンや尺でも</span><span data-en>Other tones and formats</span></h3>
-        <p><span data-ja>アニメ、ブランド映像、実写風など、目的に合わせたトーンで短い映像を制作します。まずはご相談ください。</span><span data-en>Anime, brand films, live-action-style — short films in the tone your project needs. Start with a conversation.</span></p>
+        <p><span data-ja>アニメーションからブランド映像、実写風まで、目的に合わせたトーンで短い映像を制作します。まずはご相談ください。</span><span data-en>Animation, brand films, live-action-style — short films in the tone your project needs. Start with a conversation.</span></p>
         <a href="#contact"><span data-ja>ご相談をはじめる</span><span data-en>Start a Conversation</span></a>
       </div>
     </div>
@@ -620,7 +745,7 @@
           <span data-en>If you are considering Nuri, please contact us first — we will discuss the way forward together.</span>
         </p>
       </div>
-      <div class="nuri-panel">
+      <div class="nuri-panel" id="nuri-access">
         <div class="nuri-status">
           <div class="status-row"><b>NURI URL</b><span><a href="https://nuri.dreamplaylab.com/login" target="_blank" rel="noopener">https://nuri.dreamplaylab.com/login</a></span></div>
           <div class="status-row"><b>ACCESS</b><span><span data-ja>まずはお問い合わせください</span><span data-en>Please contact us first</span></span></div>
@@ -659,7 +784,7 @@
           <span data-ja>Chukは、当社が運営するAI APIゲートウェイです。GLM・DeepSeek・Qwen・Kimi・MiniMaxをはじめとする、中国で生まれた先端の生成AIモデルを、OpenAI互換のAPIひとつで、世界の開発者へお届けします。</span>
           <span data-en>Chuk is an AI API gateway operated by DreamPlay. It delivers frontier generative models born in China — GLM, DeepSeek, Qwen, Kimi, MiniMax and more — to builders worldwide through a single OpenAI-compatible API.</span>
         </p>
-        <ul class="chuk-points">
+        <ul class="chuk-points" id="chuk-features">
           <li>
             <strong><span data-ja>OpenAI互換</span><span data-en>OpenAI-compatible</span></strong>
             <p><span data-ja>既存のSDKやコードはそのままに、接続先を書きかえるだけで使いはじめられます。</span><span data-en>Keep your existing SDK and code — swap the endpoint and you are running.</span></p>
@@ -674,7 +799,7 @@
           </li>
           <li>
             <strong><span data-ja>使った分だけの従量課金</span><span data-en>Pay-as-you-go metering</span></strong>
-            <p><span data-ja>使った分だけの従量課金制で、隠れた追加の費用はございません。詳細は公式サイトでご確認ください。</span><span data-en>Usage is metered per request, with no hidden add-on charges. See the Chuk site for details.</span></p>
+            <p><span data-ja>使った分だけの従量課金制で、隠れた追加費用はありません。詳細は公式サイトでご確認ください。</span><span data-en>Usage is metered per request, with no hidden add-on charges. See the Chuk site for details.</span></p>
           </li>
         </ul>
         <p class="chuk-note">
@@ -682,7 +807,7 @@
           <span data-en>API keys are self-served on the Chuk site. We are also happy to discuss model choice, plan selection, and adoption with you.</span>
         </p>
       </div>
-      <div class="chuk-panel">
+      <div class="chuk-panel" id="chuk-panel">
         <div class="chuk-status">
           <div class="status-row"><b>SERVICE URL</b><span><a href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener">https://chuk.dreamplaylab.com/</a></span></div>
           <div class="status-row"><b>API</b><span><span data-ja>OpenAI互換</span><span data-en>OpenAI-compatible</span></span></div>
@@ -709,18 +834,18 @@
   </div>
 </section>
 
-<!-- Collaboration Flow / 協働の流れ -->
+<!-- Collaboration Flow / 協業の流れ -->
 <section id="flow" aria-labelledby="flow-title">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow"><span data-ja>協働の流れ</span><span data-en>PROCESS</span></span>
+      <span class="eyebrow"><span data-ja>協業の流れ</span><span data-en>PROCESS</span></span>
       <h2 class="title" id="flow-title"><span data-ja>ご相談から、次の一歩をともに見つけます。</span><span data-en>From first conversation to the next step.</span></h2>
       <p class="lede">
         <span data-ja>大きな約束よりも、確実に進められる次の一歩を優先します。</span>
         <span data-en>We prioritize a next step you can act on over big promises.</span>
       </p>
     </div>
-    <div class="steps">
+    <div class="steps" id="flow-steps">
       <article class="fstep">
         <div class="circle">01</div>
         <h3><span data-ja>ご相談</span><span data-en>Discuss</span></h3><span class="en">DISCUSS</span>
@@ -742,7 +867,7 @@
         <p><span data-ja>結果を振り返りながら、表現とプロセスを継続的に改善します。</span><span data-en>We review results and keep improving both the expression and the process.</span></p>
       </article>
     </div>
-    <div class="rhythm">
+    <div class="rhythm" id="first-meeting">
       <h3>
         <span data-ja>初回のお打ち合わせで確認すること</span>
         <span data-en>What the first conversation covers</span>
