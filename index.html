@@ -326,14 +326,14 @@
   .demo-cta a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
   .demo-note{margin-top:24px;font-size:12.5px;color:var(--muted)}
 
-  /* —— Nuri：左説明 + 右ワークスペースの作業例 —— */
-  .nuri-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
-  .nuri-copy h2{margin-top:4px}
-  .nuri-copy h2 small{display:block;margin-top:6px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:600}
-  .nuri-copy .lede{margin-top:16px}
-  .nuri-note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--gold);background:oklch(77.0% 0.113 84.1 / 0.08);color:var(--muted);font-size:13px;line-height:1.7;border-radius:0 10px 10px 0;max-width:52ch}
-  .nuri-panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden}
-  .nuri-status{padding:20px 22px 22px}
+  /* —— Nuri / Chuk：左説明 + 右情報パネル（サービス区块共通视觉） —— */
+  .nuri-grid,.chuk-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
+  .nuri-copy h2,.chuk-copy h2{margin-top:4px}
+  .nuri-copy h2 small,.chuk-copy h2 small{display:block;margin-top:6px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:600}
+  .nuri-copy .lede,.chuk-copy .lede{margin-top:16px}
+  .nuri-note,.chuk-note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--gold);background:oklch(77.0% 0.113 84.1 / 0.08);color:var(--muted);font-size:13px;line-height:1.7;border-radius:0 10px 10px 0;max-width:52ch}
+  .nuri-panel,.chuk-panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+  .nuri-status,.chuk-status{padding:20px 22px 22px}
   .status-row{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:baseline;padding:7px 0}
   .status-row + .status-row{border-top:1px solid oklch(34.6% 0.043 273.2 / 0.3)}
   .status-row b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);font-weight:600}
@@ -341,18 +341,28 @@
   .status-row span.ok{color:var(--mint)}
   .status-row a{color:var(--cyan)}
   .status-row a:hover{color:var(--fg)}
-  .nuri-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-  .nuri-actions .btn{padding:11px 18px;font-size:14px}
+  .nuri-actions,.chuk-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+  .nuri-actions .btn,.chuk-actions .btn{padding:11px 18px;font-size:14px}
   .btn-external::after{content:"↗";font-family:var(--font-mono);font-size:13px}
 
-  /* —— Nuri：制作イメージギャラリー（AI 生成概念插画，2026-08-15 第五轮） —— */
-  .nuri-gallery{margin-top:36px}
-  .nuri-gallery .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-  .nuri-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--border);filter:saturate(.98);transition:transform .35s,filter .35s}
-  .nuri-gallery img:hover{transform:scale(1.03);filter:saturate(1.08)}
-  .nuri-gallery figcaption{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.6}
+  /* —— Chuk：サービスの要点リスト（左カラム、編集式） —— */
+  .chuk-points{margin-top:22px;list-style:none;display:flex;flex-direction:column;gap:14px}
+  .chuk-points li{border-left:2px solid var(--cyan);padding:2px 0 2px 18px}
+  .chuk-points li:nth-child(2){border-left-color:var(--gold)}
+  .chuk-points li:nth-child(3){border-left-color:var(--mint)}
+  .chuk-points strong{display:block;font-family:var(--font-display);font-size:15.5px;font-weight:700;line-height:1.4}
+  .chuk-points p{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.7}
+
+  /* —— Nuri / Chuk：制作イメージギャラリー（AI 生成概念插画） —— */
+  .nuri-gallery,.chuk-gallery{margin-top:36px}
+  .nuri-gallery .gallery,.chuk-gallery .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .chuk-gallery .gallery{grid-template-columns:repeat(3,1fr)}
+  .nuri-gallery img,.chuk-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--border);filter:saturate(.98);transition:transform .35s,filter .35s}
+  .nuri-gallery img:hover,.chuk-gallery img:hover{transform:scale(1.03);filter:saturate(1.08)}
+  .nuri-gallery figcaption,.chuk-gallery figcaption{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.6}
   @media (max-width:980px){
     .nuri-gallery .gallery{grid-template-columns:repeat(2,1fr)}
+    .chuk-gallery .gallery{grid-template-columns:repeat(3,1fr)}
   }
 
   /* —— Flow：横4ステップ + 初回のお打ち合わせ —— */
@@ -392,7 +402,7 @@
     .focus-card{min-height:0}
     .help-grid{grid-template-columns:1fr;gap:18px}
     .demo-grid{grid-template-columns:repeat(2,1fr)}
-    .nuri-grid{grid-template-columns:1fr;gap:28px}
+    .nuri-grid,.chuk-grid{grid-template-columns:1fr;gap:28px}
     .steps{grid-template-columns:repeat(2,1fr);gap:22px 16px}
     .steps::before{content:none}
     .rhythm-grid{grid-template-columns:repeat(2,1fr)}
@@ -407,6 +417,7 @@
     .steps{grid-template-columns:1fr}
     .help-item{padding-left:16px}
     .demo-grid{grid-template-columns:1fr}
+    .chuk-gallery .gallery{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -423,6 +434,7 @@
       <a href="#business"><span data-ja>事業領域</span><span data-en>Business</span></a>
       <a href="#demos"><span data-ja>制作デモ</span><span data-en>Demos</span></a>
       <a href="#nuri"><span data-ja>Nuri</span><span data-en>Nuri</span></a>
+      <a href="#chuk"><span data-ja>Chuk</span><span data-en>Chuk</span></a>
       <a href="#flow"><span data-ja>協働の流れ</span><span data-en>Process</span></a>
       <a href="#contact"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>
     </div>
@@ -632,6 +644,65 @@
   </div>
 </section>
 
+<!-- Chuk — AI API Gateway（2026-08-16 追加） -->
+<section id="chuk" aria-labelledby="chuk-title">
+  <div class="wrap">
+    <div class="chuk-grid">
+      <div class="chuk-copy">
+        <span class="eyebrow gold">CHUK — AI API GATEWAY</span>
+        <h2 class="title" id="chuk-title">
+          <span data-ja>Chuk<br>中国発の先端AIモデルを、<br>APIひとつで。</span>
+          <span data-en>Chuk — one API<br> to China's frontier models</span>
+        </h2>
+        <p class="lede">
+          <span data-ja>Chukは、当社が運営するAI APIゲートウェイです。GLM・DeepSeek・Qwen・Kimi・MiniMaxをはじめとする、中国で生まれた先端の生成AIモデルを、OpenAI互換のAPIひとつで、世界の開発者へお届けします。</span>
+          <span data-en>Chuk is an AI API gateway operated by DreamPlay. It delivers frontier generative models born in China — GLM, DeepSeek, Qwen, Kimi, MiniMax and more — to builders worldwide through a single OpenAI-compatible API.</span>
+        </p>
+        <ul class="chuk-points">
+          <li>
+            <strong><span data-ja>OpenAI互換</span><span data-en>OpenAI-compatible</span></strong>
+            <p><span data-ja>既存のSDKやコードをそのままに、接続先を書きかえるだけで使いはじめられます。</span><span data-en>Keep your existing SDK and code — swap the endpoint and you are running.</span></p>
+          </li>
+          <li>
+            <strong><span data-ja>多彩なモデル提供元</span><span data-en>Many model providers</span></strong>
+            <p><span data-ja>GLM・DeepSeek・Qwen・Kimi・MiniMaxなど、中国の主要なモデル提供元をひとつの窓口で扱えます。</span><span data-en>GLM, DeepSeek, Qwen, Kimi, MiniMax and more — leading Chinese model providers through one endpoint.</span></p>
+          </li>
+          <li>
+            <strong><span data-ja>使った分だけの従量課金</span><span data-en>Pay-as-you-go metering</span></strong>
+            <p><span data-ja>使った分だけの従量課金制です。詳細は公式サイトでご確認ください。</span><span data-en>Usage is metered per request. See the Chuk site for details.</span></p>
+          </li>
+        </ul>
+        <p class="chuk-note">
+          <span data-ja>APIキーは公式サイトからセルフサービスで発行できます。モデル選定や導入のご相談も承ります。</span>
+          <span data-en>API keys are self-served on the Chuk site. We are also happy to discuss model choice and adoption with you.</span>
+        </p>
+      </div>
+      <div class="chuk-panel">
+        <div class="chuk-status">
+          <div class="status-row"><b>SERVICE URL</b><span><a href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener">https://chuk.dreamplaylab.com/</a></span></div>
+          <div class="status-row"><b>API</b><span><span data-ja>OpenAI互換</span><span data-en>OpenAI-compatible</span></span></div>
+          <div class="status-row"><b>MODELS</b><span>GLM · DeepSeek · Qwen · Kimi · MiniMax <span data-ja>ほか</span><span data-en>+ more</span></span></div>
+          <div class="status-row"><b>ACCESS</b><span><span data-ja>公式サイトでアカウント登録（セルフサービス）</span><span data-en>Self-served sign-up on the Chuk site</span></span></div>
+          <div class="chuk-actions">
+            <a class="btn btn-primary btn-external" href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener"><span data-ja>Chukを開く</span><span data-en>Open Chuk</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figure class="chuk-gallery">
+      <div class="gallery">
+        <img src="assets/chuk-gateway-bridge.jpg" alt="Concept illustration — a bridge of light connecting two night skylines / 制作イメージ（イラスト）：光の橋でつながるふたつの夜景" loading="lazy">
+        <img src="assets/chuk-dev-terminal.jpg" alt="Concept illustration — a developer sending glowing model cards into the night sky / 制作イメージ（イラスト）：開発者の前で光るカードが空へ流れる" loading="lazy">
+        <img src="assets/chuk-model-hub.jpg" alt="Concept illustration — many light streams converging into one gateway / 制作イメージ（イラスト）：光の流れがひとつのゲートウェイに集まる" loading="lazy">
+      </div>
+      <figcaption>
+        <span data-ja>※ 画像はすべて制作イメージ（イラスト）です。サービスの画面・機能を示すものではありません。</span>
+        <span data-en>※ All images are concept illustrations — not product screenshots or feature claims.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- Collaboration Flow / 協働の流れ -->
 <section id="flow" aria-labelledby="flow-title">
   <div class="wrap">
@@ -722,6 +793,10 @@
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="12" rx="3"/><path d="m7 3 3 4M17 3l-3 4"/><path d="m8 13 2 2 4-4"/></svg></div>
           <div><div class="t"><span data-ja>製品・実績</span><span data-en>Our work</span></div><div class="v"><a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a></div></div>
         </div>
+        <div class="info-row">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <div><div class="t"><span data-ja>AI API サービス</span><span data-en>AI API service</span></div><div class="v"><a href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener">chuk.dreamplaylab.com</a></div></div>
+        </div>
         <p class="boundary-note">
           <span data-ja>ご相談の中で、目的に合わせた進め方をご一緒に決めてまいります。</span>
           <span data-en>We shape the approach together with you, around what you want to discuss.</span>
@@ -747,6 +822,7 @@
               <option value="GAME" data-ja="ゲーム開発" data-en="Game Development">ゲーム開発</option>
               <option value="AIIC" data-ja="AIインタラクティブコンテンツ" data-en="AI Interactive Content">AIインタラクティブコンテンツ</option>
               <option value="CP" data-ja="クリエイティブ制作" data-en="Creative Production">クリエイティブ制作</option>
+              <option value="CHUK" data-ja="AI API サービス「Chuk」" data-en="Chuk — AI API service">AI API サービス「Chuk」</option>
               <option value="OTHER" data-ja="その他" data-en="Other">その他</option>
             </select>
           </div>
@@ -779,7 +855,8 @@
       <a href="mailto:contact@dreamplaylab.com">contact@dreamplaylab.com</a>
     </p>
     <p class="foot-site">
-      <span data-ja>製品・実績サイト</span><span data-en>Products &amp; work:</span> <a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a>
+      <span data-ja>製品・実績サイト</span><span data-en>Products &amp; work:</span> <a href="https://game.dreamplaylab.com/" target="_blank" rel="noopener">game.dreamplaylab.com</a><br>
+      <span data-ja>AI API サービス</span><span data-en>AI API service:</span> <a href="https://chuk.dreamplaylab.com/" target="_blank" rel="noopener">chuk.dreamplaylab.com</a>
     </p>
   </div>
 </footer>
