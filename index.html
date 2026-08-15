@@ -307,6 +307,25 @@
   .focus-card.c2 .tag{color:var(--cyan)}
   .focus-card.c3 .tag{color:var(--mint)}
 
+  /* —— Demos：AI 生成動画デモ（第五轮-B，2026-08-15） —— */
+  .demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .demo-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s, border-color .25s, box-shadow .25s}
+  .demo-card:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 12px 32px oklch(81.9% .128 222.0 / .12)}
+  .demo-card video{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--bg);display:block}
+  .demo-body{padding:16px 18px 18px}
+  .demo-body h3{font-family:var(--font-display);font-size:16.5px;font-weight:700;line-height:1.4}
+  .demo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .demo-tags span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;padding:3px 9px;border-radius:6px;background:oklch(81.9% .128 222.0 / .10);color:var(--cyan);border:1px solid oklch(81.9% .128 222.0 / .18)}
+  .demo-tags span.g{background:oklch(77.0% .113 84.1 / .10);color:var(--gold);border-color:oklch(77.0% .113 84.1 / .18)}
+  .demo-body p{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.7}
+  .demo-cta{background:var(--surface);border:1px dashed var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+  .demo-cta h3{font-family:var(--font-display);font-size:17px;font-weight:700;line-height:1.45}
+  .demo-cta p{font-size:13px;color:var(--muted);line-height:1.7}
+  .demo-cta a{color:var(--cyan);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .demo-cta a:hover{color:var(--fg)}
+  .demo-cta a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+  .demo-note{margin-top:24px;font-size:12.5px;color:var(--muted)}
+
   /* —— Nuri：左説明 + 右ワークスペースの作業例 —— */
   .nuri-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
   .nuri-copy h2{margin-top:4px}
@@ -372,6 +391,7 @@
     .focus-grid{grid-template-columns:1fr}
     .focus-card{min-height:0}
     .help-grid{grid-template-columns:1fr;gap:18px}
+    .demo-grid{grid-template-columns:repeat(2,1fr)}
     .nuri-grid{grid-template-columns:1fr;gap:28px}
     .steps{grid-template-columns:repeat(2,1fr);gap:22px 16px}
     .steps::before{content:none}
@@ -386,6 +406,7 @@
     .hero h1{font-size:30px}
     .steps{grid-template-columns:1fr}
     .help-item{padding-left:16px}
+    .demo-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -400,6 +421,7 @@
     </a>
     <div class="nav-links">
       <a href="#business"><span data-ja>事業領域</span><span data-en>Business</span></a>
+      <a href="#demos"><span data-ja>制作デモ</span><span data-en>Demos</span></a>
       <a href="#nuri"><span data-ja>Nuri</span><span data-en>Nuri</span></a>
       <a href="#flow"><span data-ja>協働の流れ</span><span data-en>Process</span></a>
       <a href="#contact"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>
@@ -498,6 +520,71 @@
         <span class="tag">CREATIVE PRODUCTION</span>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- AI Animation Demos / 制作デモ（AI 生成，2026-08-15 第五轮-B） -->
+<section id="demos" aria-labelledby="demos-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow gold"><span data-ja>制作デモ</span><span data-en>AI ANIMATION DEMOS</span></span>
+      <h2 class="title" id="demos-title"><span data-ja>AIアニメ制作の実例をご覧ください。</span><span data-en>See our AI animation work in motion.</span></h2>
+      <p class="lede">
+        <span data-ja>すべてAI生成による制作デモです。アニメ、ブランド映像、実写風など、目的に合わせたトーンで短い映像を制作します。</span>
+        <span data-en>Every clip below is an AI-generated production demo — anime, brand films, and live-action-style pieces in the tone your project calls for.</span>
+      </p>
+    </div>
+    <div class="demo-grid">
+      <article class="demo-card">
+        <video controls playsinline preload="metadata" poster="assets/demo5-live-action-poster.jpg" src="assets/demo5-live-action.mp4" aria-label="制作デモ動画（AI生成）：実写風ショートフィルム"></video>
+        <div class="demo-body">
+          <h3><span data-ja>実写風ショートフィルム</span><span data-en>Live-Action-Style Short</span></h3>
+          <div class="demo-tags"><span class="g">CINEMATIC</span><span data-ja>実写風</span><span data-en>LIVE-ACTION</span></div>
+          <p><span data-ja>雨の街で交わされる、ふたりの物語。台詞と情景を含む短編です。</span><span data-en>A two-person story on rain-soaked streets — a short film with dialogue and atmosphere.</span></p>
+        </div>
+      </article>
+      <article class="demo-card">
+        <video controls playsinline preload="metadata" poster="assets/demo1-tokyo-mysteria-poster.jpg" src="assets/demo1-tokyo-mysteria.mp4" aria-label="制作デモ動画（AI生成）：東京綺譚 アニメファンタジー"></video>
+        <div class="demo-body">
+          <h3><span data-ja>東京綺譚 — アニメファンタジー</span><span data-en>Tokyo Mysteria — Anime Fantasy</span></h3>
+          <div class="demo-tags"><span data-ja>アニメ</span><span data-en>ANIME</span><span data-ja>ファンタジー</span><span data-en>FANTASY</span></div>
+          <p><span data-ja>渋谷の夜にはじまる、不思議な出会いの物語。</span><span data-en>A mysterious encounter unfolds in the neon night of Shibuya.</span></p>
+        </div>
+      </article>
+      <article class="demo-card">
+        <video controls playsinline preload="metadata" poster="assets/demo3-shinjuku-2077-poster.jpg" src="assets/demo3-shinjuku-2077.mp4" aria-label="制作デモ動画（AI生成）：新宿2077 サイバーパンク"></video>
+        <div class="demo-body">
+          <h3><span data-ja>新宿2077 — サイバーパンク</span><span data-en>Shinjuku 2077 — Cyberpunk</span></h3>
+          <div class="demo-tags"><span class="g">SF</span><span data-ja>アクション</span><span data-en>ACTION</span></div>
+          <p><span data-ja>雨の新宿を駆ける、賞金稼ぎの一夜。</span><span data-en>A bounty hunter's night, racing through rain-lit Shinjuku.</span></p>
+        </div>
+      </article>
+      <article class="demo-card">
+        <video controls playsinline preload="metadata" poster="assets/demo4-vtuber-styles-poster.jpg" src="assets/demo4-vtuber-styles.mp4" aria-label="制作デモ動画（AI生成）：VTuberスタイルバリエーション"></video>
+        <div class="demo-body">
+          <h3><span data-ja>V-Style — VTuberスタイル集</span><span data-en>V-Style — VTuber Variations</span></h3>
+          <div class="demo-tags"><span data-ja>VTuber</span><span data-en>VTUBER</span><span data-ja>バリエーション</span><span data-en>STYLES</span></div>
+          <p><span data-ja>ひとりのキャラクターを、5つの世界観へ。</span><span data-en>One character, five worlds — style exploration in five directions.</span></p>
+        </div>
+      </article>
+      <article class="demo-card">
+        <video controls playsinline preload="metadata" poster="assets/demo2-brand-reborn-poster.jpg" src="assets/demo2-brand-reborn.mp4" aria-label="制作デモ動画（AI生成）：ブランドフィルム KISARAGI"></video>
+        <div class="demo-body">
+          <h3><span data-ja>Brand Reborn — ブランドフィルム</span><span data-en>Brand Reborn — Brand Film</span></h3>
+          <div class="demo-tags"><span class="g">BRAND</span><span data-ja>伝統工芸</span><span data-en>CRAFT</span></div>
+          <p><span data-ja>伝統工芸の魅力を、短い映像で伝えます。</span><span data-en>A traditional craft brand, told in a short film.</span></p>
+        </div>
+      </article>
+      <div class="demo-cta">
+        <h3><span data-ja>ほかのトーンや尺でも</span><span data-en>Other tones and formats</span></h3>
+        <p><span data-ja>アニメ、ブランド映像、実写風など、目的に合わせたトーンで短い映像を制作します。まずはご相談ください。</span><span data-en>Anime, brand films, live-action-style — short films in the tone your project needs. Start with a conversation.</span></p>
+        <a href="#contact"><span data-ja>ご相談をはじめる</span><span data-en>Start a Conversation</span></a>
+      </div>
+    </div>
+    <p class="demo-note">
+      <span data-ja>※ 動画はすべてAI生成による制作デモです。</span>
+      <span data-en>※ All videos are AI-generated production demos.</span>
+    </p>
   </div>
 </section>
 
